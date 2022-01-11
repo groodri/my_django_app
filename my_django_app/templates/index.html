@@ -47,74 +47,16 @@
 
 <!--   Start Register section   -->
 
-<form class="col s12 form-login" method="POST" action="/loginuser"> {% csrf_token %}
-    <div class="row center">
-      <p class="form-label green-text">Name</p>
-      <div>
-        <input id="form.name" type="text" placeholder="Name">
-      </div>
-    </div>
-    <div class="row center">
-      <p class="form-label green-text">Surnames</p>
-      <div>
-        <input id="form.surnames" type="text" placeholder="Surnames">
-      </div>
-    </div>
-    <div class="row center">
-      <p class="form-label green-text">E-mail</p>
-      <div>
-        <input id="form.email" type="email" placeholder="E-mail">
-      </div>
-    </div>
-    <div class="row center">
-      <p class="form-label green-text">Password</p>
-      <div>
-        <input id="form.pasword" type="password" placeholder="Password">
-      </div>
-    </div>
+{% block register %}
 
-  <div>
-    <p class="center">
-      You're accepting someone to do something! (trust us)
-    </p>
-  </div>
-
-  <div class="row center">
-    <p class="registration error">{{ message }}</p>
-    <button class="btn green" type="submit">REGISTER USER</button>
-    <br><br>
-    <a href="/loginuser" target="_blank">I'm already registered</a>
-    <br><br>
-  </div>
-
-</form>
+{% endblock register %}
 
 <!--   End Register section   -->
 <!--   Start Login section   -->
 
-<form class="col s12 form-login" method="POST" id="loginuser" action="location.assign(/loginuser)"> {% csrf_token %}
-  <div class="row center">
-    <p class="form-label green-text">E-mail</p>
-    <div>
-      <input id="form.email" type="email" placeholder="E-mail">
-    </div>
-  </div>
-  <div class="row center">
-    <p class="form-label green-text">Password</p>
-    <div>
-      <input id="form.pasword" type="password" placeholder="Password">
-    </div>
-  </div>
+{% block login %}
 
-  <div class="row center">
-    <p class="login error">{{ message }}</p>
-
-    <button class="btn green" type="submit">Login</button>
-    <br><br>
-    <a href="/password" target="_blank">I forgot my password</a>
-    <br><br>
-  </div>
-</form>
+{% endblock login %}
 
 <!--   End Login section   -->
 
@@ -190,7 +132,7 @@
             <input id="id_email" type="email"/>
           </div>
           <div>
-            <button class="btn-large waves-effect waves-light green" onclick="sendemail()" id="email-button" type="button">Contact someone from Something!</button>
+            <button class="btn-large waves-effect waves-light green" onclick="sendEmail()" id="email-button" type="button">Contact someone from Something!</button>
           </div>
         </div>
       </div>

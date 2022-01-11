@@ -1,7 +1,7 @@
 from django import forms
 from hello.models import *
 
-class register(forms.ModelForm):
+class registerForm(forms.ModelForm):
     class Meta:
         model = Candidate
         fields = [
@@ -19,7 +19,7 @@ class register(forms.ModelForm):
             'password': forms.PasswordInput(),
         }
 
-class loginuser(forms.ModelForm):
+class loginForm(forms.ModelForm):
     class Meta:
         model = Candidate
         fields = [

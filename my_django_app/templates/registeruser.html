@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block register %}
+
+<form class="col s12 form-login" method="POST" action="."> {% csrf_token %}
+    <div class="row center">
+      <p class="form-label green-text">Name</p>
+      <div>
+        {{ form.name }}
+      </div>
+    </div>
+    <div class="row center">
+      <p class="form-label green-text">Surnames</p>
+      <div>
+        {{ form.surnames }}
+      </div>
+    </div>
+    <div class="row center">
+      <p class="form-label green-text">E-mail</p>
+      <div>
+        {{ form.email }}
+      </div>
+    </div>
+    <div class="row center">
+      <p class="form-label green-text">Password</p>
+      <div>
+        {{ form.password }}
+      </div>
+    </div>
+
+  <div>
+    <p class="center">
+      You're accepting someone to do something! (trust us)
+    </p>
+  </div>
+
+  <div class="row center">
+    <p class="registration error">{{ message }}</p>
+    <button class="btn green" type="submit">REGISTER USER</button>
+  </div>
+
+</form>
+
+{% endblock register %}

@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block login %}
+
+<form class="col s12 form-login" method="POST" id="loginuser" action="location.assign(/loginuser/)"> {% csrf_token %}
+    <div class="row center">
+      <p class="form-label green-text">E-mail</p>
+      <div>
+          {{ message }}
+          <input id="form.email" type="email" placeholder="E-mail">
+      </div>
+    </div>
+
+    <div class="row center">
+      <p class="form-label green-text">Password</p>
+      <div>
+        <input id="form.pasword" type="password" placeholder="Password">
+      </div>
+    </div>
+  
+    <div class="row center">
+      <p class="login error">{{ message }}</p>
+  
+      <button class="btn green" type="submit">Login</button>
+      <br><br>
+      <a href="/password/" target="_blank">I forgot my password</a>
+      <br><br>
+    </div>
+</form>
+
+{% endblock login %}
